@@ -1,0 +1,7 @@
+.articles-list a {
+  text-decoration: none;
+}
+
+.articles-list a:hover {
+  color: #007bff;
+}

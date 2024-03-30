@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=yp, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1><%= article.title %></h1>
+      <div>
+        <div>
+          <img src="<%= article.img %>" alt="" />
+        </div>
+        <p><%= article.content%></p>
+        <small><%= article.creationDate %></small>
+        <h5 class="m-0">By:</h5>
+        <p><%= article.author.firstname %> <%= article.author.lastname %></p>
+      </div>
+    </div>
+  </body>
+</html>

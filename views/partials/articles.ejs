@@ -1,0 +1,42 @@
+<div class="articles-list">
+  <% for (const article of articles) { %>
+  <div class="col-md-8">
+    <a href="/articulos/<%= article.id %>">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= article.title %></h5>
+          <div>
+            <img src="<%= article.img %>" alt="" />
+          </div>
+          <p class="card-text"><%= article.content %></p>
+
+          <p class="card-text">
+            <small class="text-muted"><%= article.creationDate %></small>
+          </p>
+          <div>
+          </a>
+            <h6>Comentarios:</h6>
+            <div>
+              <form action="/comentarios/">
+                <input type="text" />
+              </form>
+            </div>
+            <% if (article.comments && article.comments.length > 0) { %>
+            <ul>
+              <% for (const comment of article.comments) { %>
+              <li>
+                <strong><%= comment.user.firstname %> <%= comment.user.lastName %>:</strong>
+                <%= comment.content %>
+              </li>
+              <% } %>
+            </ul>
+            <% } else { %>
+            <p>No hay comentarios</p>
+            <% } %>
+          </div>
+        </div>
+      </div>
+   
+  </div>
+  <% } %>
+</div>
