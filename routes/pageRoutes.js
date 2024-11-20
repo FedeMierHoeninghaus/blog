@@ -6,4 +6,5 @@ router.get("/", pagesController.showHome);
 router.get("/loguin", pagesController.showLoguin);
 router.get("/signIn", pagesController.showSignIn);
 
+
 module.exports = router;

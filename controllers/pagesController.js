@@ -1,31 +1,32 @@
 const { Article, Author, Comment, User } = require("../models");
 
 async function showHome(req, res) {
-  const articles = await Article.findAll({
-    include: [{ model: Author }, { model: Comment, include: [{ model: User }] }],
-    order: [["creationDate", "DESC"]],
-  });
-  res.render("home", { articles });
+    const articles = await Article.findAll({
+        include: Author,
+        order: [["creationDate", "DESC"]],
+    });
+    const limitedArticles = articles.slice(0, 20);
+    res.render("home", { articles: limitedArticles });
 }
 
 async function showContact(req, res) {
-  res.render("contact");
+    res.render("contact");
 }
 
 async function showAboutUs(req, res) {
-  res.render("aboutUs");
+    res.render("aboutUs");
 }
 async function showLoguin(req, res) {
-  res.render("loguin");
+    res.render("loguin");
 }
 
 async function showSignIn(req, res) {
-  res.render("signIn");
+    res.render("signIn");
 }
 module.exports = {
-  showHome,
-  showContact,
-  showAboutUs,
-  showLoguin,
-  showSignIn,
+    showHome,
+    showContact,
+    showAboutUs,
+    showLoguin,
+    showSignIn,
 };

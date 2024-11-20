@@ -7,7 +7,7 @@ async function index(req, res) {
         order: [["creationDate", "DESC"]],
     });
     const limitArticles = articles.slice(0, 20);
-    // res.render("home", { articles });
+    res.render("home", { articles: limitedArticles });
 }
 
 // Display the specified resource.
