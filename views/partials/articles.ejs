@@ -1,9 +1,9 @@
-<div class="articles-list">
+<div class="articles-list w-100">
   <% for (const article of articles) { %>
   <div class="col-md-8">
     <a href="/articulos/<%= article.id %>">
       <div class="card">
-        <div class="card-body">
+        <div class="card-body w-100">
           <h5 class="card-title"><%= article.title %></h5>
           <div>
             <img src="<%= article.img %>" alt="" />
